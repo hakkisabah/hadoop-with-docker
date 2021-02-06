@@ -1,0 +1,19 @@
+version: "3.8"
+networks:
+  isolation-network:
+    driver: bridge
+services:
+  hadoop-service:
+    container_name: hadoop_docker
+    hostname: "localhost"
+    build:
+      dockerfile: Dockerfile
+      context: ./
+    ports: ["9870:9870", "8188:8188", "9864:9864", "8042:8042", "8088:8088"]
+    networks:
+      - isolation-network
+    tty: true
+    volumes :
+      - "./output:/root/output"
+volumes:
+  hadoop-data:

@@ -16,7 +16,7 @@ printf '20\n'
 RUN ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa
 RUN cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 RUN chmod 0600 ~/.ssh/authorized_keys
-RUN wget https://ftp.itu.edu.tr/Mirror/Apache/hadoop/common/hadoop-3.2.2/hadoop-3.2.2.tar.gz
+RUN wget https://archive.apache.org/dist/hadoop/common/hadoop-3.2.2/hadoop-3.2.2.tar.gz
 RUN tar -xzvf hadoop-3.2.2.tar.gz
 RUN mv hadoop-3.2.2 /usr/local/hadoop
 ENV JV_HME="export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre"
